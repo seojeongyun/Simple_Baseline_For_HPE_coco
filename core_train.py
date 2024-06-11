@@ -174,3 +174,4 @@ if __name__ == '__main__':
     from setproctitle import *
     setproctitle('Simple_Baseline : COCO')
     main()
+    print('sibal')
