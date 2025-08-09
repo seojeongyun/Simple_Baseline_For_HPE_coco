@@ -15,7 +15,7 @@ config.OUTPUT_DIR = ''
 config.LOG_DIR = ''
 config.DATA_DIR = ''
 config.GPUS = '0'
-config.WORKERS = 0
+config.WORKERS = 6
 config.PRINT_FREQ = 20
 
 # Cudnn related params
@@ -44,7 +44,7 @@ MODEL_EXTRAS = {
 config.MODEL = edict()
 config.MODEL.NAME = 'pose_resnet'
 config.MODEL.INIT_WEIGHTS = True
-config.MODEL.PRETRAINED = '/home/jysuh/PycharmProjects/Simple_Baseline_For_HPE/coco/pose_resnet_50/coco/model_best.pth.tar'
+config.MODEL.PRETRAINED = ''
 config.MODEL.NUM_JOINTS = 17
 config.MODEL.IMAGE_SIZE = [256, 256]  # width * height, ex: 192 * 256
 config.MODEL.EXTRA = MODEL_EXTRAS[config.MODEL.NAME]
@@ -58,9 +58,8 @@ config.LOSS.USE_TARGET_WEIGHT = True
 config.DATASET = edict()
 config.DATASET.ROOT = '/storage/jysuh/coco2017/coco'
 config.DATASET.DATASET = 'coco'
-# config.DATASET.TRAIN_SET = 'train2017'
-#config.DATASET.TEST_SET = 'valid2017'
 config.DATASET.TRAIN_SET = 'train2017'
+config.DATASET.TEST_SET = 'valid2017'
 config.DATASET.DATA_FORMAT = 'jpg'
 config.DATASET.HYBRID_JOINTS_TYPE = ''
 config.DATASET.SELECT_DATA = False
@@ -85,12 +84,12 @@ config.TRAIN.GAMMA1 = 0.99
 config.TRAIN.GAMMA2 = 0.0
 
 config.TRAIN.BEGIN_EPOCH = 0
-config.TRAIN.END_EPOCH = 140
+config.TRAIN.END_EPOCH = 100
 
 config.TRAIN.RESUME = False
 config.TRAIN.CHECKPOINT = ''
 
-config.TRAIN.BATCH_SIZE = 64
+config.TRAIN.BATCH_SIZE = 50
 config.TRAIN.SHUFFLE = True
 
 # testing
@@ -222,4 +221,4 @@ def get_model_name(cfg):
 if __name__ == '__main__':
     import sys
     # gen_config(sys.argv[1])
-    gen_config('/home/jysuh/PycharmProjects/Simple_Baseline_For_HPE/config/coco.yaml')
+    gen_config('/storage/jysuh/Simple_Baseline_For_HPE_coco/coco.yaml')
