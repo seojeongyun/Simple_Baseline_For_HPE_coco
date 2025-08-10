@@ -44,7 +44,7 @@ MODEL_EXTRAS = {
 config.MODEL = edict()
 config.MODEL.NAME = 'pose_resnet'
 config.MODEL.INIT_WEIGHTS = True
-config.MODEL.PRETRAINED = ''
+config.MODEL.PRETRAINED = '/storage/jysuh/Simple_Baseline_For_HPE_coco/coco/pose_resnet_50/coco/checkpoint.pth.tar'
 config.MODEL.NUM_JOINTS = 17
 config.MODEL.IMAGE_SIZE = [256, 256]  # width * height, ex: 192 * 256
 config.MODEL.EXTRA = MODEL_EXTRAS[config.MODEL.NAME]
@@ -73,8 +73,8 @@ config.DATASET.ROT_FACTOR = 30
 config.TRAIN = edict()
 
 config.TRAIN.LR_FACTOR = 0.1
-config.TRAIN.LR_STEP = [90, 110]
-config.TRAIN.LR = 0.001
+config.TRAIN.LR_STEP = [66, 80, 90] # [90, 110]
+config.TRAIN.LR = 1e-4 # 0.001
 
 config.TRAIN.OPTIMIZER = 'adam'
 config.TRAIN.MOMENTUM = 0.9
@@ -86,7 +86,7 @@ config.TRAIN.GAMMA2 = 0.0
 config.TRAIN.BEGIN_EPOCH = 0
 config.TRAIN.END_EPOCH = 100
 
-config.TRAIN.RESUME = False
+config.TRAIN.RESUME = True  # False
 config.TRAIN.CHECKPOINT = ''
 
 config.TRAIN.BATCH_SIZE = 100
