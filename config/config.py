@@ -83,7 +83,7 @@ config.TRAIN.NESTEROV = False
 config.TRAIN.GAMMA1 = 0.99
 config.TRAIN.GAMMA2 = 0.0
 
-config.TRAIN.BEGIN_EPOCH = 0
+config.TRAIN.BEGIN_EPOCH = 66
 config.TRAIN.END_EPOCH = 100
 
 config.TRAIN.RESUME = True  # False
